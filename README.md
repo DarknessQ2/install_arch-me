@@ -9,4 +9,6 @@ aqui para que les des permisos
 y solo requieres este
 # ./install_all.sh
 
-ya tine casi todas las dependecias instaladas solo para graficas instaladas no para graficas
+ya tine casi todas las dependecias instaladas solo para graficas integrada no para graficas de envidia y demas
+
+
