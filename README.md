@@ -1,54 +1,68 @@
 # install_arch-me
 
 ## Hola 👋
-Esto **NO es un dotfile**, es **mi configuración personal** para instalar **Arch Linux automáticamente** con todo lo que uso.
+Esto **NO es un dotfile**.  
+Es mi configuración personal para instalar **Arch Linux automáticamente**
+con todo lo que uso.
 
-El repo es público porque no se puede hacer privado 😅,  
-siéntete **libre de usarlo o modificarlo**, especialmente si quieres Arch ya listo con apps.
+El repo es público porque no puedo hacerlo privado 😅  
+Si te sirve, úsalo o modifícalo.
 
 ---
 
-## ⚠️ IMPORTANTE
+## ⚠️ ADVERTENCIAS IMPORTANTES
 
-**ESTE SCRIPT BORRA TODO EL DISCO**
-
-- ✅ **SOLO BIOS (Legacy)**
-- ✅ **SOLO gráficas integradas Intel**
+🚨 **BORRA TODO EL DISCO**  
+🚨 **SOLO BIOS / LEGACY**  
+🚨 **SOLO Intel con gráfica integrada (vieja)**  
 
 ❌ NO NVIDIA  
 ❌ NO AMD  
 ❌ NO UEFI  
 
+Si tu hardware no cumple esto, **NO lo uses tal cual**.
+
 ---
 
-## 📦 Qué incluye
+## 📦 Qué instala
 
-- Arch Linux base  
-- GRUB BIOS (legacy)  
-- NetworkManager  
-- PipeWire (audio)  
-- Hyprland (Wayland)  
-- Caelestia  
+### Sistema base
+- Arch Linux
+- GRUB BIOS (legacy)
+- NetworkManager
+- PipeWire (audio)
+- Intel ucode + mesa
+- ZRAM (swap en RAM)
 
-### Apps vía Flatpak
-- Discord  
-- Firefox  
-- Chrome  
-- Steam  
-- PrismLauncher  
-- Krita  
-- LibreOffice  
+### Escritorio
+- Hyprland
+- Caelestia
+
+### Apps (Pacman)
+- Kitty
+- mpvpaper
+- swww
+- BlueZ
+- UFW
+- Pavucontrol
+
+### Apps (Flatpak)
+- Discord
+- Firefox
+- Chrome
+- Steam
+- PrismLauncher
+- Krita
+- LibreOffice
+- Dolphin Emulator
+- Sober
 
 ---
 
 ## 🚀 Uso (desde Arch ISO)
 
-Clona el repositorio
-y dale permiso y ejecutalo
 ```bash
 git clone https://github.com/DarknessQ2/install_arch-me.git
 cd install_arch-me
-
 chmod +x *.sh
-
 ./install_all.sh
