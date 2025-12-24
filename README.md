@@ -9,48 +9,31 @@ siéntete libre de usarlo o modificarlo, especialmente si quieres Arch ya listo 
 # ⚠️ IMPORTANTE
 
 BORRA TODO EL DISCO
-
 SOLO BIOS (Legacy)
-
 SOLO gráficas integradas Intel
 
 ❌ NO NVIDIA
-
 ❌ NO AMD
-
 ❌ NO UEFI
-
-📦 Qué incluye
+# 📦 Qué incluye
 
 Arch Linux base
-
 GRUB BIOS (legacy)
-
 NetworkManager
-
 PipeWire (audio)
-
 Hyprland (Wayland)
-
 Caelestia
 
-Apps vía Flatpak:
-
+# Apps vía Flatpak:
 Discord
-
 Firefox
-
 Chrome
-
 Steam
-
 PrismLauncher
-
 Krita
-
 LibreOffice
 
-🚀 Uso (desde Arch ISO)
+# 🚀 Uso (desde Arch ISO)
 
 Clona el repo:
 
@@ -58,20 +41,20 @@ git clone https://github.com/DarknessQ2/install_arch-me.git
 cd install_arch-me
 
 
-Da permisos a los scripts:
+# Da permisos a los scripts:
 
 chmod +x *.sh
 
 
-Ejecuta el instalador:
+# Ejecuta el instalador:
 
 ./install_all.sh
 
 
-Eso es todo ✅
+# Eso es todo ✅
 El script instala casi todas las dependencias automáticamente.
 
-🧠 Nota final
+# 🧠 Nota final
 
 Este instalador está hecho para mi hardware (Intel integrada vieja).
 Si tienes NVIDIA, AMD o UEFI, NO lo uses tal cual.
