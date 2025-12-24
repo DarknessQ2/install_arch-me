@@ -4,32 +4,34 @@ set -e
 USERNAME="luis"
 PASSWORD="luis"
 
-# ---- Todo esto corre DENTRO del sistema instalado ----
 arch-chroot /mnt /bin/bash <<EOF
-
-# Usuario
 useradd -m -G wheel $USERNAME
 echo "$USERNAME:$PASSWORD" | chpasswd
-
-# Sudo (seguro, sin duplicar líneas)
 sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
 
-# Paquetes base para usuario
 pacman -S --noconfirm --needed \
-git \
 base-devel \
+git \
 flatpak \
-fish
+fish \
+htop neofetch neovim \
+wget curl fd fzf lf \
+cava mangohud \
+gparted \
+udiskie \
+terminus-font \
+alsa-utils sof-firmware \
+mesa-utils mpvpaper swww \
+xarchiver file-roller ark \
+firefox krita libreoffice-fresh \
+network-manager-applet
 
-# Flatpak repo
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
 EOF
 
-# ---- Instalar YAY como usuario ----
+# yay
 arch-chroot /mnt sudo -u "$USERNAME" bash <<EOF
 cd /home/$USERNAME
-
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si --noconfirm
@@ -37,7 +39,7 @@ cd ..
 rm -rf yay
 EOF
 
-# ---- Apps AUR ----
+# AUR apps
 arch-chroot /mnt sudo -u "$USERNAME" bash <<EOF
 yay -S --noconfirm \
 google-chrome \
@@ -45,7 +47,7 @@ github-desktop-bin \
 ipscan-bin
 EOF
 
-# ---- Apps Flatpak ----
+# Flatpak apps
 arch-chroot /mnt /bin/bash <<EOF
 flatpak install -y flathub \
 com.discordapp.Discord \
@@ -56,7 +58,7 @@ org.prismlauncher.PrismLauncher \
 org.vinegarhq.Sober
 EOF
 
-# ---- Caelestia ----
+# Caelestia
 arch-chroot /mnt sudo -u "$USERNAME" bash <<EOF
 git clone https://github.com/caelestia-dots/caelestia.git /home/$USERNAME/.local/share/caelestia
 fish /home/$USERNAME/.local/share/caelestia/install.fish
