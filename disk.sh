@@ -1,23 +1,18 @@
 #!/bin/bash
 set -e
 
-if [ -d /sys/firmware/efi ]; then
-  echo "❌ UEFI detectado. Este instalador es SOLO BIOS."
-  exit 1
-fi
-
 lsblk
-read -rp "Disco (ej: /dev/sda): " DISK
-read -rp "ESCRIBE BORRAR para continuar: " OK
-[ "$OK" != "BORRAR" ] && exit 1
+read -p "Disco (ej: /dev/sda): " DISK
+read -p "ESCRIBE BORRAR para continuar: " OK
 
-umount -R /mnt 2>/dev/null || true
-wipefs -af "$DISK"
+[ "$OK" != "BORRAR" ] && exit 1
 
 parted -s "$DISK" mklabel msdos
 parted -s "$DISK" mkpart primary ext4 1MiB 100%
+parted -s "$DISK" set 1 boot on
 
-mkfs.ext4 -F "${DISK}1"
+mkfs.ext4 "${DISK}1"
+
 mount "${DISK}1" /mnt
 
 echo "$DISK" > /mnt/.disk
