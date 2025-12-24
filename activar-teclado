@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "Activando teclado interno..."
+sudo systemctl stop disable-internal-kbd.service
+echo "Teclado interno activado."
+

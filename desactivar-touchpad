@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "Desactivando touchpad..."
+sudo evtest --grab /dev/input/event14 &
+echo $! > ~/.touchpad_pid
+echo "Touchpad desactivado."

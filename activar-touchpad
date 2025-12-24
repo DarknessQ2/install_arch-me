@@ -1,0 +1,7 @@
+#!/bin/sh
+echo "Activando touchpad..."
+if [ -f ~/.touchpad_pid ]; then
+    kill $(cat ~/.touchpad_pid) 2>/dev/null
+    rm ~/.touchpad_pid
+fi
+echo "Touchpad activado."
