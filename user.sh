@@ -2,7 +2,7 @@
 set -e
 
 USERNAME="luis"
-PASSWORD="luis"
+PASSWORD="12345"
 
 arch-chroot /mnt /bin/bash <<EOF
 useradd -m -G wheel $USERNAME
