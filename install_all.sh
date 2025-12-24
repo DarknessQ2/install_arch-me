@@ -1,10 +1,16 @@
 #!/bin/bash
 set -e
 
-echo "=== INSTALADOR ARCH + CAELESTIA ==="
+chmod +x disk.sh base.sh user.sh
 
-bash disk.sh
-bash base.sh
+echo "===> DISK"
+./disk.sh
 
-echo "== Entrando al sistema instalado =="
-arch-chroot /mnt /root/user.sh
+echo "===> BASE"
+export DISK
+./base.sh
+
+echo "===> USER + CAELESTIA"
+./user.sh
+
+echo "✅ Instalación completada. Reinicia."
