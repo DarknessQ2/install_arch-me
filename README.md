@@ -58,6 +58,7 @@ Si tu hardware no cumple esto, **NO lo uses tal cual**.
 - Sober
 
 ---
+ojo este repo usa caelestial y no uses esto si no lo corre tu compu
 
 ## 🚀 Uso (desde Arch ISO)
 
