@@ -43,8 +43,8 @@ siéntete **libre de usarlo o modificarlo**, especialmente si quieres Arch ya li
 
 ## 🚀 Uso (desde Arch ISO)
 
-Clona el repositorio:
-
+Clona el repositorio
+y dale permiso y ejecutalo
 ```bash
 git clone https://github.com/DarknessQ2/install_arch-me.git
 cd install_arch-me
