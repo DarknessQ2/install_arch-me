@@ -7,10 +7,9 @@ echo "===> DISK"
 ./disk.sh
 
 echo "===> BASE"
-export DISK
 ./base.sh
 
-echo "===> USER + CAELESTIA"
+echo "===> USER / APPS / CAELESTIA"
 ./user.sh
 
-echo "✅ Instalación completada. Reinicia."
+echo "✅ Instalación completa. Reinicia."
